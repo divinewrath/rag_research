@@ -6,3 +6,4 @@ data.json
 *.bak
 .idea
 indexed.json
+paths.txt
