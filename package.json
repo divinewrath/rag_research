@@ -1,0 +1,19 @@
+{
+  "name": "ragrat",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "index": "node indexer.js",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "@qdrant/js-client-rest": "^1.15.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "fast-glob": "^3.3.3",
+    "node-fetch": "^3.3.2",
+    "tree-sitter": "^0.20.6",
+    "tree-sitter-php": "^0.20.0",
+    "uuid": "^13.0.0"
+  }
+}
