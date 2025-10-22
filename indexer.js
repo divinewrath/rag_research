@@ -1,7 +1,7 @@
 import fs from "fs/promises";
-import { existsSync } from "fs";
-import path from "path";
-import crypto from "crypto";
+import { existsSync } from "node:fs";
+import path from "mode:path";
+import crypto from "node:crypto";
 import dotenv from "dotenv";
 import FastGlob from "fast-glob";
 import { QdrantClient } from "@qdrant/js-client-rest";
@@ -16,7 +16,6 @@ const {
   CHUNK_SIZE = "1000",
   CHUNK_OVERLAP = "150",
   BATCH_SIZE = "128",
-  EMBEDDING_MODEL = "e5-small-v2",
   EMBED_SERVER = "http://localhost:8001/embed",
 } = process.env;
 
@@ -78,11 +77,6 @@ async function loadIndexed() {
 async function saveIndexed(indexed) {
   await fs.writeFile(INDEXED_FILE, JSON.stringify(indexed, null, 2), "utf8");
 }
-
-/*async function getEmbeddings(texts) {
-  const outputs = await embedder(texts, { pooling: "mean", normalize: true });
-  return outputs.tolist(); // zwraca listę wektorów
-}*/
 
 const qdrant = new QdrantClient({ url: QDRANT_URL });
 
